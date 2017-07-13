@@ -39,7 +39,7 @@ $ gcc example_fail.c -o example_fail
 $ ./example_fail
 executing 3 test(s)
 
-example_fail.c:12: going_to_fail() FAILED expecting (a == b)
+example_fail.c:12 going_to_fail() FAILED expecting (a == b)
 
 1 test(s) failed
 $

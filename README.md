@@ -7,6 +7,7 @@ Designed for small projects that want to quickly add unittests while in developm
 
 ## Example Usage
 ```c
+// taken from example_pass.c
 #include "scuut.h"
 
 TEST(one_is_less_than_two){

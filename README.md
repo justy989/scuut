@@ -6,42 +6,6 @@ Designed for small projects that want to quickly add unittests while in developm
  - automatically discovers tests when they are defined
 
 ## Example Usage
-#### Passing Scenario
-```c
-// taken from example_pass.c
-#include "scuut.h"
-
-TEST(one_is_less_than_two){
-     int a = 1;
-     int b = 2;
-     EXPECT(a < b);
-}
-
-TEST(three_is_greather_than_two){
-     int a = 3;
-     int b = 2;
-     EXPECT(a > b);
-}
-
-TEST(zero_is_not_one){
-     int a = 0;
-     int b = 1;
-     EXPECT(a != b);
-}
-
-int main(){
-     RUN_TESTS();
-}
-```
-
-```bash
-$ gcc example_pass.c -o example_pass
-$ ./example_pass
-executing 3 test(s)
-
-all test(s) passed
-$
-```
 
 #### Failing Scenario
 ```c
@@ -78,6 +42,43 @@ executing 3 test(s)
 example_fail.c:12: going_to_fail() FAILED expecting (a == b)
 
 1 test(s) failed
+$
+```
+
+#### Passing Scenario
+```c
+// taken from example_pass.c
+#include "scuut.h"
+
+TEST(one_is_less_than_two){
+     int a = 1;
+     int b = 2;
+     EXPECT(a < b);
+}
+
+TEST(three_is_greather_than_two){
+     int a = 3;
+     int b = 2;
+     EXPECT(a > b);
+}
+
+TEST(zero_is_not_one){
+     int a = 0;
+     int b = 1;
+     EXPECT(a != b);
+}
+
+int main(){
+     RUN_TESTS();
+}
+```
+
+```bash
+$ gcc example_pass.c -o example_pass
+$ ./example_pass
+executing 3 test(s)
+
+all test(s) passed
 $
 ```
 

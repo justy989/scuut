@@ -6,7 +6,7 @@ Designed for small projects that want to quickly add unittests while in developm
  - automatically discovers tests when they are defined
 
 ## Example Usage
-### Passing Scenario
+#### Passing Scenario
 ```c
 // taken from example_pass.c
 #include "scuut.h"
@@ -43,7 +43,7 @@ all test(s) passed
 $
 ```
 
-### Failing Scenario
+#### Failing Scenario
 ```c
 #include "scuut.h"
 

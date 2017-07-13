@@ -2,12 +2,12 @@
 simple c undefined unit test library  
   
 Designed for small projects that want to quickly add unittests while in development.
- - single header file
+ - single header file (tiny! ~40 lines)
  - automatically discovers tests when they are defined
 
 ## Example Usage
 ```c
-#include "scut.h"
+#include "scuut.h"
 
 TEST(one_is_less_than_two){
      int a = 1;
@@ -30,6 +30,15 @@ TEST(zero_is_not_one){
 int main(){
      RUN_TESTS();
 }
+```
+
+```bash
+$ gcc example_pass.c -o example_pass
+$ ./example_pass
+executing 3 test(s)
+
+all test(s) passed
+$
 ```
 
 ## Caveat

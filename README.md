@@ -6,6 +6,7 @@ Designed for small projects that want to quickly add unittests while in developm
  - automatically discovers tests when they are defined
 
 ## Example Usage
+### Passing Scenario
 ```c
 // taken from example_pass.c
 #include "scuut.h"
@@ -39,6 +40,44 @@ $ ./example_pass
 executing 3 test(s)
 
 all test(s) passed
+$
+```
+
+### Failing Scenario
+```c
+#include "scuut.h"
+
+TEST(going_to_pass){
+     int a = 1;
+     int b = 1;
+     EXPECT(a == b);
+}
+
+TEST(going_to_fail){
+     int a = 0;
+     int b = 1;
+     EXPECT(a == b);
+}
+
+TEST(never_reached){
+     int a = 1;
+     int b = 1;
+     EXPECT(a == b);
+}
+
+int main(){
+     RUN_TESTS();
+}
+```
+
+```bash
+$ gcc example_fail.c -o example_fail
+$ ./example_fail
+executing 3 test(s)
+
+example_fail.c:12: going_to_fail() FAILED expecting (a == b)
+
+1 test(s) failed
 $
 ```
 

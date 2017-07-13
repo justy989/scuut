@@ -9,22 +9,23 @@ Designed for small projects that want to quickly add unittests while in developm
 
 #### Failing Scenario
 ```c
+// taken from example_fail.c
 #include "scuut.h"
 
-TEST(going_to_pass){
+TEST(one_is_one){
      int a = 1;
      int b = 1;
      EXPECT(a == b);
 }
 
-TEST(going_to_fail){
+TEST(one_is_zero){
      int a = 0;
      int b = 1;
      EXPECT(a == b);
 }
 
-TEST(never_reached){
-     int a = 1;
+TEST(one_is_two){
+     int a = 2;
      int b = 1;
      EXPECT(a == b);
 }
@@ -39,10 +40,10 @@ $ gcc example_fail.c -o example_fail
 $ ./example_fail
 executing 3 test(s)
 
-example_fail.c:12 going_to_fail() FAILED expecting (a == b)
+example_fail.c:12 'one_is_zero' FAILED expecting (a == b)
+example_fail.c:18 'one_is_two' FAILED expecting (a == b)
 
-1 test(s) failed
-$
+2 test(s) failed
 ```
 
 #### Passing Scenario
@@ -68,6 +69,11 @@ TEST(zero_is_not_one){
      EXPECT(a != b);
 }
 
+TEST(one_is_true){
+     int a = 1;
+     EXPECT(a);
+}
+
 int main(){
      RUN_TESTS();
 }
@@ -76,10 +82,9 @@ int main(){
 ```bash
 $ gcc example_pass.c -o example_pass
 $ ./example_pass
-executing 3 test(s)
+executing 4 test(s)
 
 all test(s) passed
-$
 ```
 
 ## Caveat

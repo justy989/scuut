@@ -20,7 +20,7 @@ typedef void scuut_test_func_t(int*);
 // pass conditionals that will cause the test to fail if they evaluate to false
 #define EXPECT(cond)                                                                             \
      if(!(cond)){                                                                                \
-          printf("%s:%d %s() FAILED expecting (%s)\n", __FILE__, __LINE__, __FUNCTION__, #cond); \
+          printf("%s:%d '%s' FAILED expecting (%s)\n", __FILE__, __LINE__, __FUNCTION__, #cond); \
           *scuut_test_failed = 1;                                                                \
      }
 

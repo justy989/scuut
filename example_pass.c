@@ -18,6 +18,11 @@ TEST(zero_is_not_one){
      EXPECT(a != b);
 }
 
+TEST(one_is_true){
+     int a = 1;
+     EXPECT(a);
+}
+
 int main(){
      RUN_TESTS();
 }

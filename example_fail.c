@@ -1,19 +1,19 @@
 #include "scuut.h"
 
-TEST(going_to_pass){
+TEST(one_is_one){
      int a = 1;
      int b = 1;
      EXPECT(a == b);
 }
 
-TEST(going_to_fail){
+TEST(one_is_zero){
      int a = 0;
      int b = 1;
      EXPECT(a == b);
 }
 
-TEST(never_reached){
-     int a = 1;
+TEST(one_is_two){
+     int a = 2;
      int b = 1;
      EXPECT(a == b);
 }
